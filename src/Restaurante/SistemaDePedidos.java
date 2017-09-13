@@ -60,14 +60,14 @@ public class SistemaDePedidos {
 		double vlr_recebido = 1000d;
 		
 		Tools.msg("=============================================================================");
-		Tools.msg("\n   Total do Pedido: " + ped.getTotal());
-		Tools.msg("\n   Valor recebido.: " + vlr_recebido);
-		Tools.msg("\n   Troco..........: " + (vlr_recebido - ped.getTotal()));
+		Tools.msg("\n   Total do Pedido: " + Tools.formataN(ped.getTotal(),10));
+		Tools.msg("\n   Valor Recebido.: " + Tools.formataN(vlr_recebido,10));
+		Tools.msg("\n   Troco..........: " + Tools.formataN((vlr_recebido - ped.getTotal()),10));
 		
 	} //-------------------------------------------------------------------- Final do Main
 
 	public static String criaLinhaPrato(Prato prato) {
-		return prato.getNome() + "    Preço: " + prato.getPreco();
+		return prato.getNome() + "    Preço: " + Tools.formataN(prato.getPreco(), 10);
 		
 	}
 
