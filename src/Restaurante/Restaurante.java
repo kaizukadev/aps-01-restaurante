@@ -1,5 +1,6 @@
 package Restaurante;
 
+
 public class Restaurante {
 	
 	private Prato prato1;
@@ -26,16 +27,17 @@ public class Restaurante {
 
 	public static void mostrarCardapio(Restaurante rest){
 		String me = "     ";
-		mensagem("CARDÁPIO:\n=========\n\n");
-		mensagem(me + rest.prato1.getNome() + ": " + rest.prato1.getPreco() + "\n");
-		mensagem(me + rest.prato1.getDescricao() + ".\n\n");
-		mensagem(me + rest.prato2.getNome() + ": " + rest.prato2.getPreco() + "\n");
-		mensagem(me + rest.prato2.getDescricao() + ".\n\n");
-		mensagem(me + rest.prato3.getNome() + ": " + rest.prato3.getPreco() + "\n");
-		mensagem(me + rest.prato3.getDescricao() + ".\n\n");
+		Tools.msg("CARDÁPIO:\n=========\n\n");
+		Tools.msg(me + rest.prato1.getNome() + ": " + rest.prato1.getPreco() + "\n");
+		Tools.msg(me + rest.prato1.getDescricao() + ".\n\n");
+		Tools.msg(me + rest.prato2.getNome() + ": " + rest.prato2.getPreco() + "\n");
+		Tools.msg(me + rest.prato2.getDescricao() + ".\n\n");
+		Tools.msg(me + rest.prato3.getNome() + ": " + rest.prato3.getPreco() + "\n");
+		Tools.msg(me + rest.prato3.getDescricao() + ".\n\n");
+	}
+	
+	public static Pedido criaPedido(Prato [] pedido) {
+		return new Pedido(pedido);
 	}
 
-	public static void mensagem(String msg) {
-		System.out.print(msg);
-	}
 }
